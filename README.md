@@ -1,6 +1,6 @@
-# NREL-branding
-NREL branding components
-- [NREL-branding](#nrel-branding)
+# NLR-branding
+NLR branding components
+- [NLR-branding](#nlr-branding)
   - [Installation](#installation)
   - [Components](#components)
     - [Header](#header)
@@ -18,6 +18,10 @@ NREL branding components
       - [Props](#props-5)
 
 ## Installation
+> [!NOTE]
+> This is still pending a repository rename, and is still currently referencing the NREL name.
+> Also, CSS ID and class names are mostly left as `nrel` for now, as changing would require consumers to update their applications.
+
 `npm i nrel-branding-react`
 
 Find this on the NPM registry at https://www.npmjs.com/package/nrel-branding-react
@@ -27,7 +31,7 @@ Find this on the NPM registry at https://www.npmjs.com/package/nrel-branding-rea
 The header component is a wrapper component that can be passed React components as children. Most commonly, this will be passed the `Menu` component included in this package along with it's corresponding children.
 
 ```js
-  <Header appTitle="NREL Application Title">
+  <Header appTitle="NLR Application Title">
     <Menu>
       <MenuLink to="/route">Link Title</MenuLink>
       <MenuLink to="/another-route">Another Link Title</MenuLink>
@@ -40,8 +44,8 @@ The header component is a wrapper component that can be passed React components 
 | ------------ | ------- | -------------- | ----------------------------------------------------------------------------------------- |
 | appTitle*    | node    |                | The title of the application                                                              |
 | className    | string  |                | Add a class to be used for styling                                                        |
-| logoSrc      | string  | NREL blue logo | The source of the logo image file. This should probably live in the public dir of the app |
-| logoSection  | node    | NREL logo      | Allow the override of the default logo section with the code passed in                    |
+| logoSrc      | string  | NLR blue logo  | The source of the logo image file. This should probably live in the public dir of the app |
+| logoSection  | node    | NLR logo       | Allow the override of the default logo section with the code passed in                    |
 | children     | node    |                | The nav bar. In general, this will be the `menu` component from this library              |
 | noStick      | boolean | false          | Boolean determining if the menu bar should not be sticky to the top of the page           |
 | isSlim       | boolean | false          | Boolean for slimmer headers. Mostly used dynamically for data-viewer pages                |
@@ -69,7 +73,7 @@ The nav bar menu used to either navigate through the current application, link t
 ```js
   <Menu>
     <MenuLink to="/route">Link Title</MenuLink>
-    <ExternalMenuLink to="https://nrel.gov">NREL Homepage</ExternalMenuLink>
+    <ExternalMenuLink to="https://www.nlr.gov">NLR Homepage</ExternalMenuLink>
     <MenuSpacer />
     <CustomAuthComponent />
   </Menu>
@@ -90,7 +94,7 @@ The nav bar menu used to either navigate through the current application, link t
 A navbar link to visit an external site
 
 ```js
-  <ExternalMenuLink to="https://nrel.gov">NREL</ExternalMenuLink>
+  <ExternalMenuLink to="https://www.nlr.gov">NLR</ExternalMenuLink>
 ```
 
 #### Props

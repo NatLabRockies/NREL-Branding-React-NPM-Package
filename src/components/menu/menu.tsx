@@ -67,13 +67,13 @@ function Menu({
 
   const handleStickyheader = () => {
     if (!noStick) {
-      // Find the bottom of the NREL header
+      // Find the bottom of the NLR header
       // (height on mobile will depend on the length of the title)
-      let headerBottom = document.querySelector('.vadr-header')?.getBoundingClientRect().bottom || 0;
+      let headerBottom =
+        document.querySelector(".vadr-header")?.getBoundingClientRect()
+          .bottom || 0;
 
-      let newStickyClass = headerBottom <= 0
-        ? 'stick'
-        : 'no-stick';
+      let newStickyClass = headerBottom <= 0 ? "stick" : "no-stick";
 
       setStickyClass(newStickyClass);
     }
