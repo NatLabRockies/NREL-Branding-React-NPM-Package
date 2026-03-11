@@ -5,6 +5,7 @@
 - Renamed NREL -> NLR across various files
   _(NOTE: Left ID and class names NREL for now to avoid updating every application)_
 - Footer: updated links & alliance logo
+- Updated dependencies to latest versions of rollup and rollup-plugin-*
 
 ## 1.0.51
 
