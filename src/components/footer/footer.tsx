@@ -199,13 +199,13 @@ function NRELFooter({ className = "", contact }: INRELFooterProps) {
                 <div className="col-sm-6 nrel-footer-logos-container">
                   <a href="https://www.alliance-for-energy-innovation.org">
                     <img
-                      className="mr-5 alliance-logo"
+                      className="mr-5 nrel-alliance-logo alliance-logo"
                       src={AllianceLogo}
                       alt="Alliance for Energy Innovation, LLC"
                     />
                   </a>
                   <a href="https://www.energy.gov">
-                    <DoeLogo className="doe-logo" />
+                    <DoeLogo className="nrel-doe-logo doe-logo" />
                   </a>
                 </div>
                 <div className="col-12 col-sm-6">
