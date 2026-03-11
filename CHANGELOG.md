@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.52
+
+- Renamed NREL -> NLR across various files
+  _(NOTE: Left ID and class names NREL for now to avoid updating every application)_
+- Footer: updated links & alliance logo
+
 ## 1.0.51
 
 - Increase top margin of header

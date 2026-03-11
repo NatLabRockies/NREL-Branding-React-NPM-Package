@@ -1,9 +1,16 @@
-import * as React from 'react';
-import { Fragment, ReactNode, Children, cloneElement, ReactElement } from 'react';
-import * as PropTypes from 'prop-types';
-import DefaultLogo from './images/nrel-logo@2x-01.png';
-import './style.scss';
-import MenuContext from '../menu/menu-context';
+import * as PropTypes from "prop-types";
+import * as React from "react";
+import {
+  Children,
+  cloneElement,
+  Fragment,
+  ReactElement,
+  ReactNode,
+} from "react";
+
+import MenuContext from "../menu/menu-context";
+import DefaultLogo from "./images/nlr-logo@2x-01.png";
+import "./style.scss";
 
 NRELHeader.propTypes = {
   appTitle: PropTypes.any.isRequired,
@@ -14,7 +21,7 @@ NRELHeader.propTypes = {
   children: PropTypes.node,
   menuCloseDelay: PropTypes.number,
   logoSection: PropTypes.node,
-}
+};
 
 export type INRELHeaderProps = {
   /** The title of the app (can be a string or JSX) */
@@ -46,7 +53,7 @@ export type INRELHeaderProps = {
  */
 function NRELHeader({
   appTitle,
-  className = '',
+  className = "",
   logoSrc,
   children,
   isSlim,
@@ -57,23 +64,40 @@ function NRELHeader({
 }: INRELHeaderProps) {
 
   let slimClass = isSlim ? 'slim' : '';
-  let mobileClass = hasMobileNav ? 'mobile-nav' : '';
+  let mobileClass = hasMobileNav ? "mobile-nav" : "";
 
   return (
     <MenuContext.Provider value={{ menuCloseDelay }}>
-      <nav id="shared-nrel-header" className={`nrel-header ${className} ${slimClass} ${mobileClass}`}>
+      <nav
+        id="shared-nrel-header"
+        className={`nrel-header ${className} ${slimClass} ${mobileClass}`}
+      >
         <header className="vadr-header">
           <h1 className="vadr-100-title">{appTitle}</h1>
           {logoSection ? (
             logoSection
           ) : (
-            <a className="header-link" href="https://www.nrel.gov" target="_blank" rel="noopener noreferrer">
-              <img src={logoSrc ? logoSrc : DefaultLogo} width="280px" alt="nlr-logo" className="nrel-logo-image" />
+            <a
+              className="header-link"
+              href="https://www.nlr.gov"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src={logoSrc ? logoSrc : DefaultLogo}
+                width="280px"
+                alt="nlr-logo"
+                className="nrel-logo-image"
+              />
             </a>
           )}
         </header>
         {children ? (
-          <>{Children.map(children, (child) => cloneElement(child as ReactElement, { isSlim, noStick }))}</>
+          <>
+            {Children.map(children, (child) =>
+              cloneElement(child as ReactElement, { isSlim, noStick }),
+            )}
+          </>
         ) : (
           <Fragment />
         )}
